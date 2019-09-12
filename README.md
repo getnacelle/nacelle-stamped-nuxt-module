@@ -1,0 +1,1 @@
+# nacelle-stamped-nuxt-module
