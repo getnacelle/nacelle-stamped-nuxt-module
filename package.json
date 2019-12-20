@@ -1,6 +1,6 @@
 {
   "name": "@nacelle/nacelle-stamped-nuxt-module",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Integrates Stamped.io into your Nacelle Nuxt project",
   "license": "MIT",
   "contributors": [
