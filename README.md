@@ -4,8 +4,8 @@ Adds Vue.js components for displaying [Stamped.io](https://stamped.io/) product 
 
 ## Requirements
 
-* A Nacelle project set up locally. See https://docs.getnacelle.com for getting started.
-* A Stamped.io account and app installed on your Shopify store.
+- A Nacelle project set up locally. See https://docs.getnacelle.com for getting started.
+- A Stamped.io account and app installed on your Shopify store.
 
 ## Setup
 
@@ -29,7 +29,7 @@ modules: [
 ],
 ```
 
-Next you will have to add the Klaviyo configuration options to `nuxt.config.js` in the `nacelle` config object. You will need you shopify domain and Stamped public API key.
+Next you will have to add the Stamped configuration options to `nuxt.config.js` in the `nacelle` config object. You will need you shopify domain and Stamped public API key.
 
 You can find your Stamped api key in their dashboard under "Settings > API Keys". Copy the "API Key Public".
 
@@ -42,13 +42,13 @@ nacelle: {
   gaID: process.env.NACELLE_GA_ID,
   fbID: process.env.NACELLE_FB_ID,
   stamped: {
-      domain: '<store name here>.myshopify.com',
-      apiKey: 'XXXXXXXXXXXX',
-    }
+    domain: '<store name here>.myshopify.com',
+    apiKey: 'XXXXXXXXXXXX',
+  }
 },
 ```
 
-### Add the components to your 
+### Add the components to your site
 
 There are two components you can add to your Nacelle site: `<stamped-main-widget />` and `<stamped-star-rating />`.
 
