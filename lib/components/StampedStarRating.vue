@@ -52,8 +52,10 @@ export default {
       document.body.appendChild(s)
 
       window.stampedLoaded = true
-    } else if (window.StampedFn) {
-      window.StampedFn.init()
+    } else if (window.StampedFn && !window.stampedBadgesLoaded) {
+      setTimeout(() => {
+        window.StampedFn.loadBadges()
+      }, 200)
     } else {
       const waiting = setInterval(() => {
         if (window.StampedFn) {

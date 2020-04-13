@@ -69,7 +69,9 @@ export default {
 
       window.stampedLoaded = true
     } else if (window.StampedFn) {
-      window.StampedFn.init()
+      setTimeout(() => {
+        window.StampedFn.init()
+      }, 100)
     } else {
       const waiting = setInterval(() => {
         if (window.StampedFn) {
