@@ -18,7 +18,7 @@ export default {
       type: Object,
       default: () => {
         return {
-          id: '',
+          pimSyncSourceProductId: '',
           handle: ''
         }
       }
@@ -26,8 +26,8 @@ export default {
   },
   computed: {
     decodedProductId () {
-      if (this.product && this.product.id) {
-        const decodedIdUri = window.atob(this.product.id)
+      if (this.product && this.product.pimSyncSourceProductId) {
+        const decodedIdUri = window.atob(this.product.pimSyncSourceProductId)
         const decodedIdParts = decodedIdUri.split('Product/')
         const decodedId = decodedIdParts[1]
         return decodedId
@@ -52,8 +52,10 @@ export default {
       document.body.appendChild(s)
 
       window.stampedLoaded = true
-    } else if (window.StampedFn) {
-      window.StampedFn.init()
+    } else if (window.StampedFn && !window.stampedBadgesLoaded) {
+      setTimeout(() => {
+        window.StampedFn.loadBadges()
+      }, 200)
     } else {
       const waiting = setInterval(() => {
         if (window.StampedFn) {
