@@ -24,7 +24,7 @@ export default {
       type: Object,
       default: () => {
         return {
-          id: '',
+          pimSyncSourceProductId: '',
           handle: '',
           title: '',
           description: '',
@@ -42,8 +42,8 @@ export default {
       return `${this.domain}/products/${this.product.handle}`
     },
     decodedProductId () {
-      if (this.product && this.product.id) {
-        const decodedIdUri = window.atob(this.product.id)
+      if (this.product && this.product.pimSyncSourceProductId) {
+        const decodedIdUri = window.atob(this.product.pimSyncSourceProductId)
         const decodedIdParts = decodedIdUri.split('Product/')
         const decodedId = decodedIdParts[1]
         return decodedId
