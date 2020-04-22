@@ -1,7 +1,13 @@
 <template>
   <div>
     <client-only>
-      <div id="stamped-reviews-widget" :data-widget-type="widgetStyle" />
+      <div
+        id="stamped-reviews-widget"
+        :data-color-outer="colorOuter"
+        :data-color-inner="colorInner"
+        :data-color-ribbon="colorRibbon"
+        :data-widget-type="widgetStyle"
+      />
     </client-only>
   </div>
 </template>
@@ -12,9 +18,21 @@ export default {
     widgetStyle: {
       type: String,
       default: 'carousel'
+    },
+    colorOuter: {
+      type: String,
+      default: ''
+    },
+    colorInner: {
+      type: String,
+      default: ''
+    },
+    colorRibbon: {
+      type: String,
+      default: ''
     }
   },
-  mounted () {
+  mounted() {
     window.stampedLoaded = window.stampedLoaded || false
 
     if (!window.stampedLoaded) {
@@ -45,6 +63,3 @@ export default {
 }
 </script>
 
-<style>
-
-</style>
