@@ -29,18 +29,17 @@ modules: [
 ],
 ```
 
-Next you will have to add the Stamped configuration options to `nuxt.config.js` in the `nacelle` config object. You will need you shopify domain and Stamped public API key.
+Next you will have to add the Stamped configuration options to `nuxt.config.js` in the `env` config object. You will need you shopify domain and Stamped public API key.
 
 You can find your Stamped api key in their dashboard under "Settings > API Keys". Copy the "API Key Public".
 
 Add these setting parameters to `nuxt.config.js` so it should look something like this:
 
 ```
-nacelle: {
-  spaceID: process.env.NACELLE_SPACE_ID,
-  token: process.env.NACELLE_GRAPHQL_TOKEN,
-  gaID: process.env.NACELLE_GA_ID,
-  fbID: process.env.NACELLE_FB_ID,
+env: {
+  nacelleSpaceID: process.env.NACELLE_SPACE_ID,
+  nacelleToken: process.env.NACELLE_GRAPHQL_TOKEN,
+  buildMode: process.env.BUILD_MODE,
   stamped: {
     domain: '<store name here>.myshopify.com',
     apiKey: 'XXXXXXXXXXXX',
@@ -62,4 +61,20 @@ There are two components you can add to your Nacelle site: `<stamped-main-widget
 
 ```
 <stamped-star-rating :product="product">
+```
+
+**Stamped Display Widget** will render a display widget. It also takes the widgetStyle string as a prop.
+
+Options include:
+- [Carousel](https://help.stamped.io/article/44-display-widgets#carousel) => `'carousel'`
+- [Full Page](https://help.stamped.io/article/44-display-widgets#full-page) => `'full-page'`
+- [Visual Gallery](https://help.stamped.io/article/44-display-widgets#gallery) => `'visual-gallery'`
+- [Wall Photos](https://help.stamped.io/article/44-display-widgets#wall-photos) => `'wall-photos'`
+- [Site Badge](https://help.stamped.io/article/44-display-widgets#site-badge) => `'site-badge'`
+- [Side Drawer](https://help.stamped.io/article/44-display-widgets#drawer) => `'drawer'`
+- [Instagram Feed](https://help.stamped.io/article/44-display-widgets#instagram) => `'instagram-feed'`
+- [Net Promoter Score](https://help.stamped.io/article/44-display-widgets#nps) => `'carousel-nps'`
+
+```
+<stamped-star-rating :widgetStyle="full-page">
 ```

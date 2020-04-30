@@ -47,7 +47,11 @@ export default {
   env: {
     nacelleSpaceID: process.env.NACELLE_SPACE_ID,
     nacelleToken: process.env.NACELLE_GRAPHQL_TOKEN,
-    buildMode: process.env.BUILD_MODE
+    buildMode: process.env.BUILD_MODE,
+    stamped: {
+      domain: 'flipfloparch.myshopify.com',
+      apiKey: 'pubkey-gWQ45WvWaY1339MMiZSB3r79iOl078'
+    }
   },
 
   modules: [
@@ -72,11 +76,7 @@ export default {
     spaceID: process.env.NACELLE_SPACE_ID,
     token: process.env.NACELLE_GRAPHQL_TOKEN,
     gaID: process.env.NACELLE_GA_ID,
-    fbID: process.env.NACELLE_FB_ID,
-    stamped: {
-      domain: 'flipfloparch.myshopify.com',
-      apiKey: 'pubkey-gWQ45WvWaY1339MMiZSB3r79iOl078'
-    }
+    fbID: process.env.NACELLE_FB_ID
   },
 
   generate: {
