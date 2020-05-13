@@ -78,3 +78,30 @@ Options include:
 ```
 <stamped-star-rating :widgetStyle="full-page">
 ```
+
+### Asynchronous data and dynamic components
+Obviously, a big reason we are using vue and nuxt is for dynamic content. This plugin taps into the router and reloads the stamped widgets on a per page basis. However, if there are any components being loaded dynamically than we need to manually trigger a reload.
+
+Its better to do this in bulk to reduce network requests.
+
+```js
+export default {
+  data() {
+    return {
+      products: []
+    }
+  },
+  async mounted() {
+    const response = await getProducts()
+    this.products = response.data.products
+
+    this.$nextTick(() => {
+      if (window && window.StampedFn) {
+        window.StampedFn.loadBadges()          // Load Badges
+        window.StampedFn.loadDisplayWidgets()  // Load Widgets
+        window.StampedFn.reloadUGC()           // Load reloadUGC
+      }
+    })
+  }
+}
+```
