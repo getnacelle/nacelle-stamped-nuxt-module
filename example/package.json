@@ -25,7 +25,7 @@
     "fs": "0.0.1-security",
     "graphql-tag": "^2.10.1",
     "localforage": "^1.7.3",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.1",
     "nuxt": "^2.8.1",
     "nuxt-generate-cluster": "^2.6.0",
     "ora": "^3.4.0",
